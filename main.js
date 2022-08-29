@@ -1,10 +1,15 @@
-const display = document.querySelector('.display')
-display.style.gridTemplateColumns = 'repeat(16, 1fr)'
-display.style.gridTemplateRows = 'repeat(16, 1fr)'
+function addSquares(size) {
+    const display = document.querySelector('.display')
+    let squares = display.querySelectorAll('div')
+    squares.forEach((div) => div.remove())
+    display.style.gridTemplateColumns = `repeat(${size}, 1fr)`
+    display.style.gridTemplateRows = `repeat(${size}, 1fr)`
 
-for (let i = 0; i < 256; i++) {
-    const square = document.createElement('div')
-    square.style.borderColor = 'black'
-    square.style.backgroundColor = 'blue'
-    display.insertAdjacentElement('beforeend', square)
+    let amount = size * size
+    for (let i = 0; i < amount; i++) {
+        const square = document.createElement('div')
+        square.style.borderColor = 'black'
+        square.style.backgroundColor = 'blue'
+        display.insertAdjacentElement('beforeend', square)
+    }
 }
