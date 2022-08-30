@@ -8,6 +8,7 @@ function addSquares(size) {
     let amount = size * size
     for (let i = 0; i < amount; i++) {
         const square = document.createElement('div')
+        square.addEventListener('mouseover', ()=> {square.style.backgroundColor = "black"})
         square.style.borderColor = 'black'
         square.style.backgroundColor = 'blue'
         display.insertAdjacentElement('beforeend', square)
